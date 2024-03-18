@@ -2,7 +2,7 @@ FROM mysql:latest
 LABEL APP="studentapp"
 LABEL engg="prat"
 USER root
-
+RUN systemctl start mysql
 RUN mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';"
 RUN mysql -u root -p1234 -e "create database studentapp;"
 RUN mysql -u root -p1234 -e "use studentapp;"
