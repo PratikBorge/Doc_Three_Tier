@@ -7,7 +7,9 @@ services:
     ports:
     - "80:80"
     networks:
-    - bridge
+      network1:
+        name: bridge
+        external: true
 
   backendimg :
    build : /root/Doc_Three_Tier/Backend
@@ -15,6 +17,8 @@ services:
    ports:
    - "8080:8080"
    networks:
-   - bridge
+      network1:
+        name: bridge
+        external: true
    depends_on: 
    - "frontendimg"
