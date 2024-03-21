@@ -6,19 +6,13 @@ services:
     container_name: frontend
     ports:
     - "80:80"
-    networks:
-      network1:
-        name: bridge
-        external: true
+    network_mode: bridge
 
   backendimg :
    build : /root/Doc_Three_Tier/Backend
    container_name: backend
    ports:
    - "8080:8080"
-   networks:
-      network1:
-        name: bridge
-        external: true
+   network_mode: bridge
    depends_on: 
    - "frontendimg"
