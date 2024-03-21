@@ -2,12 +2,12 @@ version : "2.24.7"
 
 services:
   frontendimg :
-    build : /Frontend/.
+    build : /Frontend
     container_name: frontend
     ports:
     - "80:80"
   backendimg :
-   build : /Backend/.
+   build : /Backend
    container_name: backend
    ports:
    - "8080:8080"
