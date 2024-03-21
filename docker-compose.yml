@@ -1,0 +1,15 @@
+version : "2.24.7"
+
+services:
+  frontendimg :
+    build : /Frontend/.
+    container_name: frontend
+    ports:
+    - "80:80"
+  backendimg :
+   build : /Backend/.
+   container_name: backend
+   ports:
+   - "8080:8080"
+   depends_on: 
+   - "frontend"
